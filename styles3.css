@@ -25,7 +25,10 @@ body {
   overflow-y: auto;
 }
 
-.sidebar h1 { font-size: 1.5rem; margin-bottom: 1rem; }
+.sidebar h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
 
 .sidebar ul { list-style: none; }
 .sidebar li { margin: 0.5rem 0; }
@@ -35,6 +38,7 @@ body {
   text-decoration: none;
   transition: color 0.2s, font-weight 0.2s;
 }
+
 .sidebar a:hover { color: #fff; }
 .sidebar a.active { color: #fff; font-weight: bold; }
 
@@ -49,97 +53,107 @@ body {
 
 .gallery img {
   width: 100%;
-  height: auto; /* preserve natural aspect ratio */
+  height: auto; /* natural aspect ratio */
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   cursor: pointer;
   transition: transform 0.2s, opacity 0.3s ease;
   opacity: 1;
 }
-.gallery img:hover { transform: scale(1.03); }
 
-/* Fade effect when filtering */
+/* Hidden fade effect */
 .gallery img.hidden {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
 
-/* Lightbox (scrollable container) */
+/* Lightbox */
 .lightbox {
   display: none;
   position: fixed;
-  inset: 0;               /* top:0 right:0 bottom:0 left:0 */
-  background: rgba(0,0,0,0.9);
-  overflow-y: auto;        /* allow vertical scroll */
-  overflow-x: hidden;
   z-index: 1000;
+  left: 0; top: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
 }
 
-/* Fixed controls so they don't push content down */
+.lightbox img {
+  max-width: 90%;
+  max-height: 70vh;
+  border-radius: 8px;
+  margin: auto;
+  display: block;
+}
+
+/* When showing emails, switch lightbox to block mode (scrollable) */
+.lightbox.email-mode {
+  display: block;
+  overflow-y: auto;   /* scroll allowed */
+  padding: 20px; /* top/bottom breathing room */
+  text-align: center;
+}
+
+.lightbox img.email-full {
+  max-width: min(1200px, 90%); /* don’t exceed 1200px or viewport width */
+  height: auto;                /* let it flow naturally */
+  max-height: none;            /* remove vh restriction */
+  margin: 0 auto;
+  display: block;
+}
+
+/* .lightbox img.email-full {
+  max-width: min(1200px, 90%); 
+  max-height: none;           
+  margin: 0 auto;             
+  display: block;
+} */
+
 .lightbox .close {
-  position: fixed;
-  top: 16px; right: 24px;
+  position: absolute;
+  top: 20px; right: 30px;
   font-size: 2rem;
   color: #fff;
   cursor: pointer;
-  z-index: 1001;
 }
 
 .lightbox .prev,
 .lightbox .next {
-  position: fixed;
+  cursor: pointer;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   color: #fff;
   font-size: 2.5rem;
   padding: 10px;
-  cursor: pointer;
   user-select: none;
   transition: color 0.2s;
-  z-index: 1001;
 }
+
 .lightbox .prev:hover,
 .lightbox .next:hover { color: #ddd; }
 .lightbox .prev { left: 20px; }
 .lightbox .next { right: 20px; }
 
-/* Scrollable content wrapper; top padding keeps image clear of fixed controls */
-.lightbox-body {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 56px 20px 40px; /* top space under the close button */
-  text-align: center;
-}
-
-/* Default image behavior (signs/logos): fit viewport nicely */
-.lightbox img {
-  max-width: 90vw;
-  max-height: 70vh;
-  border-radius: 8px;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Email designs: full readable width, unlimited height (scroll in container) */
-.lightbox img.email-full {
-  max-width: min(1200px, 90vw);
-  width: auto;
-  height: auto;      /* natural height */
-  max-height: none;  /* no viewport limit */
-}
-
-/* Caption */
 .lightbox-caption {
   color: #fff;
   text-align: center;
   margin-top: 15px;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 }
-.lightbox-caption h2 { margin-bottom: 8px; font-size: 1.5rem; }
-.lightbox-caption p { font-size: 1rem; color: #ddd; }
+
+.lightbox-caption h2 {
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+}
+
+.lightbox-caption p {
+  font-size: 1rem;
+  color: #ddd;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
