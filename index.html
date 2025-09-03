@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Design Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h1>Design Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#" data-filter="all">All Designs</a></li>
+        <li><a href="#" data-filter="signs">Signs</a></li>
+        <li><a href="#" data-filter="emails">Marketing Emails</a></li>
+        <li><a href="#" data-filter="logos">Logos</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Gallery -->
+  <div class="gallery" id="gallery">
+    <!-- Signs -->
+    <img src="images/signs/GemsBlooms.png" loading="lazy"
+         alt="Gems & Blooms Event Poster"
+         data-category="signs"
+         data-title="Storefront Sign"
+         data-description="Custom vinyl lettering for a local business." />
+    
+    <img src="images/signs/KnowingTheWest-Info.png" loading="lazy"
+         alt="Knowing the West Exhibition Shop Poster"
+         data-category="signs"
+         data-title="Storefront Sign"
+         data-description="Custom vinyl lettering for a local business." />
+    
+    <img src="images/signs/KnowingTheWest-Wayfinding.png" loading="lazy"
+         alt="Knowing the West Exhibition Shop Wayfinding Poster"
+         data-category="signs"
+         data-title="Storefront Sign"
+         data-description="Custom vinyl lettering for a local business." />
+
+    <img src="images/signs/RobinWallKimmerer.png" loading="lazy"
+         alt="Robin Wall Kimmerer Speaker Event Poster"
+         data-category="signs"
+         data-title="Storefront Sign"
+         data-description="Custom vinyl lettering for a local business." />
+
+
+    <img src="images/signs/WomenMakersMarket.png" loading="lazy"
+         alt="Women Makers Market Event Poster"
+         data-category="signs"
+         data-title="Storefront Sign"
+         data-description="Custom vinyl lettering for a local business." />
+
+    <!-- Emails (preview vs full) -->
+    <img src="images/emails/WorldEnvironmentDay-Preview.png" loading="lazy"
+         data-full="images/emails/WorldEnvironmentDay.webp"
+         alt="Email design"
+         data-category="emails"
+         data-title="Spring Campaign"
+         data-description="Responsive HTML marketing email template." />
+
+    <img src="images/email2_preview.webp" loading="lazy"
+         data-full="images/email2.webp"
+         alt="Email design"
+         data-category="emails"
+         data-title="Holiday Newsletter"
+         data-description="Festive template for end-of-year promotions." />
+
+    <!-- Logos -->
+    <img src="images/logo1.jpg" loading="lazy"
+         alt="Logo design"
+         data-category="logos"
+         data-title="Logo Concept"
+         data-description="Minimalist logo created for a startup." />
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <span class="prev">&#10094;</span>
+    <span class="next">&#10095;</span>
+    <img class="lightbox-content" id="lightbox-img" />
+    <div class="lightbox-caption">
+      <h2 id="lightbox-title"></h2>
+      <p id="lightbox-desc"></p>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>

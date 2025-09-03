@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Design Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <h1>Design Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#" data-filter="all">All Designs</a></li>
+        <li><a href="#" data-filter="signs">Signs</a></li>
+        <li><a href="#" data-filter="emails">Marketing Emails</a></li>
+        <li><a href="#" data-filter="logos">Logos</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="gallery" id="gallery">
+    <!-- Example images, replace with your own -->
+    <img src="images/signs/GemsBlooms.png" alt="Sign design" data-category="signs"
+         data-title="Storefront Sign" data-description="Custom vinyl lettering for local business." />
+    <img src="images/signs/KnowingTheWest-Info.png" alt="Email design" data-category="emails"
+         data-title="Spring Campaign" data-description="Responsive HTML marketing email template." />
+    <img src="images/signs/KnowingTheWest-Wayfinding.png" alt="Logo design" data-category="logos"
+         data-title="Logo Concept" data-description="Minimalist logo created for a startup." />
+    <img src="images/signs/RobinWallKimmerer.png" alt="Sign design" data-category="signs" />
+    <img src="images/signs/WomenMakersMarket.png" alt="Email design" data-category="emails" />
+    <img src="images/logo2.jpg" alt="Logo design" data-category="logos" />
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" />
+    <div class="lightbox-caption">
+      <h2 id="lightbox-title"></h2>
+      <p id="lightbox-desc"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
