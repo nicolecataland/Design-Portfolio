@@ -172,7 +172,7 @@ body {
 
   .sidebar h1 {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: .75rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
